@@ -1,0 +1,13 @@
+<aura:component controller="RecentlyViewedObjController" implements="flexipage:availableForAllPageTypes">
+
+<aura:attribute name="sObjId" type="String" default=""/>
+    <aura:attribute name="sObjType" type="String" default=""/>
+    <aura:handler name='init' value='{!this}' action='{!c.myAction}'
+    description = 'Initialize recently viewed object and return id'/>
+<lightning:recordForm
+        recordId="{!v.sObjId}"
+        objectApiName="{!v.sObjType}"
+        layoutType="Compact"
+        columns="4"
+        mode="readonly" />
+</aura:component>
